@@ -1,3 +1,8 @@
+
+https://frontarm.com/james-k-nelson/react-context-performance/
+
+![react-should-update](react-should-update.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
