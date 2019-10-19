@@ -18,7 +18,12 @@ function App() {
   let changeCheck = (index) => {
     let persons = [...personsState.persons];
     persons[index].check = !persons[index].check;
-    setPersonsState({ shouldUpdate: personsState.shouldUpdate, persons: persons });
+    setPersonsState((previousState, props) => {
+      return {
+        shouldUpdate: previousState.shouldUpdate,
+        persons: persons
+      }
+    });
   }
 
   let shuffleChecks = () => {
@@ -26,7 +31,12 @@ function App() {
     persons.forEach(person => {
       person.check = Math.random() > 0.7 ? !person.check : person.check;
     })
-    setPersonsState({ shouldUpdate: personsState.shouldUpdate, persons: persons });
+    setPersonsState((previousState, props) => {
+      return {
+        shouldUpdate: previousState.shouldUpdate,
+        persons: persons
+      }
+    });
   }
 
   let toggleShouldUpdate = () => {
